@@ -1,0 +1,67 @@
+<main>
+  <section class="banner-apresentacao">
+    <p>
+      Entre os pretos e pardos, são apenas 16,4% cursando uma graduação e 2,9%
+      com o diploma. Essa diferença tem relação direta com outra estatística: a
+      de escolarização média da população desses dois grupos. No grupo de
+      pessoas brancas, 60% completou ao menos o ensino médio.
+    </p>
+  </section>
+  <section class="grafico-1">
+    <div class="texto">
+      <h2 class="titulo-secao">Abandono Escolar</h2>
+      <p>
+        O abandono escolar entre a população negra é resultado de uma combinação
+        de fatores sociais e econômicos. A desigualdade socioeconômica força
+        muitos jovens a deixarem os estudos para trabalhar e ajudar suas
+        famílias. Além disso, o racismo e a discriminação nas escolas criam um
+        ambiente hostil, que desmotiva a permanência. A baixa qualidade da
+        educação em regiões mais pobres, onde a maioria da população negra está
+        concentrada, agrava o problema, assim como a falta de apoio familiar e
+        institucional. Outros fatores, como a violência nas comunidades e a
+        ausência de políticas públicas eficazes, contribuem para perpetuar essa
+        realidade, dificultando o acesso à educação e ao desenvolvimento
+        pessoal.
+      </p>
+    </div>
+    <div class="grafico">
+      <p-chart
+        type="bar"
+        [data]="informacoesGrafico1AbandonoEscolar"
+        [options]="basicOptions"
+      />
+    </div>
+  </section>
+  <section class="grafico-2">
+    <div class="texto">
+      <h2 class="titulo-secao">Nivel de Escolaridade</h2>
+      <p>
+        A desigualdade educacional entre brancos e negros no Brasil é uma
+        realidade visível em todas as etapas da escolaridade, desde o ensino
+        básico até o ensino superior. Essa disparidade é refletida em diversos
+        fatores, como o acesso a escolas de qualidade, a evasão escolar e a
+        continuidade nos estudos. Enquanto jovens brancos têm mais oportunidades
+        e recursos disponíveis, jovens negros e pardos frequentemente enfrentam
+        maiores barreiras, como a falta de infraestrutura adequada, professores
+        mal remunerados e discriminação racial no ambiente escolar.
+      </p>
+      <p>
+        Essas dificuldades no percurso educacional impactam diretamente o
+        desenvolvimento acadêmico e pessoal dos estudantes negros, muitas vezes
+        causando desmotivação e uma consequente queda no interesse pelos
+        estudos. A falta de apoio e as condições desiguais resultam em uma menor
+        taxa de conclusão do ensino médio e ingresso no ensino superior,
+        limitando também as oportunidades de ascensão social e profissional. A
+        superação dessas barreiras depende de políticas públicas inclusivas e de
+        um compromisso social com a equidade racial na educação."
+      </p>
+    </div>
+    <div class="grafico">
+      <p-chart
+        type="bar"
+        [data]="informacoesGrafico3NivelDeEscolaridade"
+        [options]="opcoesGrafico3NivelDeEscolaridade"
+      />
+    </div>
+  </section>
+</main>

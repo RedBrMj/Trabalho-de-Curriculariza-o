@@ -1,0 +1,138 @@
+header {
+  width: 100%;
+  display: flex;
+  background-color: #340505;
+  border-bottom: 5px solid #333;
+}
+
+header nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1%;
+  grid-gap: 5em;
+  flex-wrap: wrap;
+}
+
+header nav .img-logo {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  background: url(../../../assets/logo.jpg) center center no-repeat;
+  background-size: cover;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+header nav ul {
+  display: flex;
+  grid-gap: 5em;
+}
+
+header nav ul li {
+  list-style: none;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+}
+
+header nav ul li a:before {
+  border-bottom: 5px solid #fff;
+  transform: translateY(35px);
+  opacity: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  transition: 0.4s;
+}
+
+header nav ul li a::after {
+  border-top: 5px solid #fff;
+  opacity: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  transform: translateY(-35px);
+  transition: 0.4s;
+  top: 0;
+}
+
+header nav ul li a:hover:before {
+  opacity: 1;
+  transform: translateX(0) translateY(15px);
+}
+
+header nav ul li a:hover::after {
+  opacity: 1;
+  transform: translateX(0) translateY(-10px);
+}
+
+.pi.pi-bars {
+  display: none;
+  font-size: 2em;
+  position: fixed;
+  margin: 0.5em;
+  z-index: 100;
+  background-color: #fff;
+  padding: 0.3em;
+  cursor: pointer;
+}
+
+.links-nav-responsivo {
+  flex: 1;
+  list-style: none;
+  display: flex;
+  grid-gap: 2em;
+  flex-direction: column;
+}
+
+.links-nav-responsivo li a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+
+.links-nav-responsivo li a:before {
+  border-bottom: 5px solid #000;
+  transform: translateY(35px);
+  opacity: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  transition: 0.4s;
+}
+
+.links-nav-responsivo li a::after {
+  border-top: 5px solid #000;
+  opacity: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  transform: translateY(-35px);
+  transition: 0.4s;
+}
+
+@media (max-width: 950px) {
+  header {
+    display: none;
+  }
+  .pi.pi-bars {
+    display: block;
+  }
+}

@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Dosis:wght@200..800&display=swap");
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main .descricao-premio-zumbi {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(../../../assets/banner-premio-zumbi-palmares.jpg) center
+    center no-repeat;
+  background-size: cover;
+  min-height: 65vh;
+  position: relative;
+}
+
+main .descricao-premio-zumbi .informacoes-banner {
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  grid-gap: 2.5em;
+  align-items: center;
+}
+
+main .descricao-premio-zumbi::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #00000094;
+  backdrop-filter: blur(2px);
+  z-index: 2;
+  content: "";
+}
+
+main .descricao-premio-zumbi .informacoes-banner .titulo-banner {
+  font-size: clamp(0.75rem, -0.125rem + 4.6667vw, 2.2rem);
+  font-family: "Arimo", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 300;
+  text-align: center;
+  max-width: 750px;
+  color: #fff;
+}
+
+main .descricao-premio-zumbi .informacoes-banner .titulo-banner span {
+  color: #dec129;
+  text-shadow: -3px 2px 2px #ffffff1d;
+}
+
+main .descricao-premio-zumbi .informacoes-banner .divisor {
+  width: 30%;
+  height: 4px;
+  background-color: #fff;
+}
+
+main .descricao-premio-zumbi .informacoes-banner .descricao-banner {
+  width: 70%;
+  font-family: "Dosis", sans-serif;
+  color: #eee;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 1px;
+  min-width: 200px;
+}
+
+main .descricao-premio-zumbi .informacoes-banner .descricao-banner span.zumbi-palmares{
+  color: #dec129;
+}
+
+main .descricao-premio-zumbi .informacoes-banner .ver-mais {
+  width: 175px;
+  height: 50px;
+  border: none;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  transition: 0.7s;
+}
+
+main .descricao-premio-zumbi .informacoes-banner .ver-mais::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ccc;
+  transition: 0.5s ease;
+}
+
+main .descricao-premio-zumbi .informacoes-banner .ver-mais:hover {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+main .descricao-premio-zumbi .informacoes-banner .ver-mais:hover::before {
+  width: 100%;
+}
+
+main .descricao-premio-zumbi .informacoes-banner .ver-mais::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #fff;
+  transition: 0.4s ease;
+  z-index: -1;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+main .descricao-premio-zumbi .informacoes-banner .ver-mais:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+main .premiadores {
+  padding: 3em 0;
+  width: 100%;
+  min-height: 65vh;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 2em;
+}
+
+main .premiadores .descricao-secao {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1em;
+  text-align: center;
+}
+
+main .premiadores .descricao-secao h3 {
+  position: relative;
+}
+
+main .premiadores .descricao-secao h3::before {
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background-color: #333;
+  bottom: -0.45em;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+}
+
+main .premiadores .descricao-secao p {
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+}
+
+main .premiadores .descricao-secao p span {
+  color: #af5c19;
+}
+
+main .premiadores .descricao-secao .ods{
+  color: #444;
+  font-size: 17px;
+  font-style: oblique;
+}
+
+
+main .premiadores .descricao-secao .img-ods{
+  width: 150px;
+  height: 150px;
+  background: url('https://gtagenda2030.org.br/wp-content/uploads/2019/10/ods10.jpg?w=640') center center no-repeat;
+  border-radius: 8px;
+  background-size: cover;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+  rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  position: relative;
+}
+
+main .premiadores .lista {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-gap: 2.5em;
+  align-items: center;
+}
+
+main .premiadores .lista .pessoa-elemento {
+  width: 300px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.5em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+main .premiadores .lista .pessoa-elemento .img-pessoa-premiada {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+main .premiadores .lista .pessoa-elemento .img-pessoa-premiada img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+main .premiadores .lista .pessoa-elemento .btn-ver-pessoa {
+  width: 150px;
+  height: 50px;
+  border: none;
+  background-color: rgb(176, 134, 82);
+  color: #fff;
+  transition: 0.6s;
+}
+
+main .premiadores .lista .pessoa-elemento .btn-ver-pessoa:hover {
+  transform: scale(1.05);
+}
+
+.body-dialog {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 1em;
+}
+
+.informacoes-pessoa {
+  min-width: 200px;
+  min-height: 150px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding: 1em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.5em;
+  min-width: 250px;
+}
+
+.informacoes-pessoa .img-pessoa {
+  width: auto;
+  height: 300px;
+  overflow: hidden;
+}
+
+.informacoes-pessoa .img-pessoa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.informacoes-pessoa .data-premio .data {
+  display: flex;
+  text-align: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.3em;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex: 1;
+  grid-gap: 5px;
+  color: #333;
+}
+
+.informacoes-pessoa .data-premio .local {
+  display: flex;
+  text-align: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.3em;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex: 1;
+  grid-gap: 5px;
+  color: #333;
+}
+
+.descricao-premio {
+  min-width: 150px;
+  min-height: 150px;
+  flex: 1;
+  padding: 1em;
+  min-width: 200px;
+}
+
+.descricao-premio p {
+  font-style: italic;
+}
+
+.descricao-premio span {
+  font-size: 14px;
+  font-style: italic;
+  color: #444;
+  border-left: 5px double #444;
+  padding-left: 0.4em;
+}

@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Dosis:wght@200..800&display=swap");
+
+main {
+  min-height: 100vh;
+}
+
+.home {
+  width: 100%;
+  height: 83vh;
+  background: url(../../../assets/wallpaper-n1-sobre-nos.jpg) center center
+    no-repeat;
+  background-size: cover;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, transparent, #000000cc);
+}
+
+.home .texto-apresentacao-secao {
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-gap: 1.5em;
+}
+
+.home .texto-apresentacao-secao h1 {
+  color: #fff;
+  font-family: serif;
+  font-weight: 800;
+  font-size: clamp(1rem, 2.5vw, 3rem);
+  position: relative;
+}
+
+.home .texto-apresentacao-secao h1::before {
+  content: "";
+  position: absolute;
+  max-width: 350px;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  bottom: -0.3em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.home .texto-apresentacao-secao .ver-mais {
+  width: 175px;
+  height: 50px;
+  border: none;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  transition: 0.7s;
+  z-index: 10000000000000000000;
+}
+
+.home .texto-apresentacao-secao .ver-mais::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateY(100%);
+  background-color: #fff;
+  transition: 0.6s;
+}
+
+.home .texto-apresentacao-secao .ver-mais:hover::before {
+  transform: translateY(0);
+}
+
+.home .texto-apresentacao-secao .ver-mais:hover {
+  color: #333;
+  transition-delay: 0.3s;
+}
+
+.missao {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1em;
+  min-height: 50vh;
+  padding: 2em;
+}
+
+.missao .texto-apresentacao-secao {
+  max-width: 750px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  grid-gap: 1em;
+  margin: 0 auto;
+}
+
+.missao .texto-apresentacao-secao h2 {
+  position: relative;
+}
+
+.missao .texto-apresentacao-secao h2::before {
+  content: "";
+  position: absolute;
+  max-width: 100px;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  bottom: -0.3em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.missao .texto-apresentacao-secao p {
+  color: #333;
+  font-style: italic;
+}
+
+/* Parte Talvez não Manter Abaixo */
+
+
+.missao .lista-missoes {
+  width: 80vw;
+  min-width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em;
+  grid-gap: 2em;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.missao .lista-missoes .elemento-missao {
+  max-width: 400px;
+  width: 100%;
+  min-height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding: 1em;
+  transition: 0.5s;
+}
+
+.missao .lista-missoes .elemento-missao:hover {
+  transform: scale(1.05);
+}
+
+.missao .lista-missoes .elemento-missao h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.missao .lista-missoes .elemento-missao h4 i {
+  font-size: 1em;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+}
+
+/* Parte Talvez não Manter Acima */
+
+.equipe {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1em;
+  min-height: 50vh;
+  padding: 2em;
+}
+
+.equipe .texto-apresentacao-secao {
+  max-width: 750px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  grid-gap: 1em;
+  margin: 0 auto;
+}
+
+.equipe .texto-apresentacao-secao h2 {
+  position: relative;
+}
+
+.equipe .texto-apresentacao-secao h2::before {
+  content: "";
+  position: absolute;
+  max-width: 100px;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  bottom: -0.3em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.equipe .texto-apresentacao-secao p {
+  color: #333;
+  font-style: italic;
+}
+
+.equipe .lista-participantes{
+    width: 80vw;
+    min-width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    grid-gap: 2em;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;   
+}
+
+.equipe .lista-participantes .participante-elemento{
+    max-width: 350px;
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.equipe .lista-participantes .participante-elemento .descricao-pessoa{
+    position: absolute;
+    content: '';
+    width: 80%;
+    height: auto;
+    bottom: -10%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    grid-gap: 0.4em;
+    padding: 0.4em;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.valores{
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.valores.reverter .texto-valores{
+  text-align: right;
+}
+
+.valores .texto-valores{
+  min-width: 200px;
+  width: 50%;
+}
+
+.valores .texto-valores h3{
+  color: #333;
+}
+
+.valores .texto-valores p{
+  color: #444;
+}
+
+.valores .image-valor{
+  min-width: 300px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.valores .image-valor img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.missao .lista-valores{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 5em;
+}

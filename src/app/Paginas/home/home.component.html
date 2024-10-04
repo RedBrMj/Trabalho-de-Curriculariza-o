@@ -1,0 +1,92 @@
+<main>
+  <section class="slider">
+    <div class="item-slide" *ngFor="let item of listaDeSlides" 
+    [ngClass]="{ ativo: slideAtivo === (item.titulo ?? '') }"
+    (click)="abrirSlider(item.titulo ?? '')">
+      <h4 class="titulo-slide">{{ item.titulo }}</h4>
+      <p class="descricao-slide">
+        {{ item.descricao }}
+      </p>
+    </div>
+  </section>
+  <section class="marcos-historicos">
+    <div class="header-secao">
+      <h2>Marcos Históricos</h2>
+      <p>
+        A história negra é rica e marcada por lutas, resistência e conquistas em
+        diversas partes do mundo. Aqui estão alguns dos marcos mais importantes
+        ao longo dos séculos:
+      </p>
+    </div>
+    <p-timeline
+      responsive="true"
+      [value]="listaDeMarcosHistoricos"
+      align="alternate"
+      styleClass="customized-timeline"
+    >
+      <ng-template pTemplate="marker" let-marcos>
+        <span
+          style="
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+          "
+        >
+          <i class="pi pi-bookmark"></i>
+        </span>
+      </ng-template>
+      <ng-template pTemplate="content" let-marcos>
+        <p-card
+          [header]="marcos.titulo"
+          [subheader]="marcos.data"
+          [style]="{ maxWidth: '50vw', width: '100%', minWidth: '200px' }"
+        >
+          <p>
+            {{ marcos.descricao }}
+          </p>
+          <img
+            [src]="marcos?.image"
+            style="
+              width: 100%;
+              height: 250px;
+              display: block;
+              margin-bottom: 1em;
+              object-fit: cover;
+            "
+          />
+          <a href="{{ marcos?.links }}" *ngIf="marcos.links" target="_blank"
+            ><button class="btn-ver-info">Leia Mais</button></a
+          >
+        </p-card>
+      </ng-template>
+    </p-timeline>
+  </section>
+  <section class="zumbi-palmares">
+    <div class="informacoes">
+      <h2 class="titulo-secao">Quem foi <span>Zumbi dos Palmares</span>?</h2>
+      <hr />
+      <p>
+        Zumbi dos Palmares foi um líder quilombola e uma figura emblemática da
+        luta contra a escravidão no Brasil. Nascido em 1655, em um quilombo na
+        região de Alagoas, Zumbi se destacou por sua resistência e por lutar
+        pela liberdade dos negros escravizados. Ele se tornou o líder do
+        Quilombo dos Palmares, uma comunidade formada por africanos fugitivos e
+        seus descendentes, que se tornou um símbolo da resistência negra.
+        <br />
+        Zumbi defendeu a autonomia e os direitos dos quilombolas, promovendo um
+        governo próprio e um modo de vida livre. Sua luta culminou em um
+        conflito constante com as autoridades coloniais portuguesas, que
+        buscavam destruir o quilombo. Em 20 de novembro de 1695, Zumbi foi
+        capturado e assassinado, mas seu legado perdura como um ícone da
+        resistência negra e da busca por igualdade no Brasil. O Dia da
+        Consciência Negra, celebrado em 20 de novembro, homenageia sua memória e
+        luta.
+      </p>
+    </div>
+  </section>
+</main>

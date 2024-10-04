@@ -1,0 +1,194 @@
+/* elemento pai: banner-eventos */
+/* elemento filho remetente ao texto: texto-eventos */
+/* elemento filho relacionado a imagem: img-banner-eventos */
+
+main {
+  padding: 1em;
+}
+
+main .banner-eventos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 75vh;
+  justify-content: center;
+  grid-gap: 2em;
+  overflow: hidden;
+}
+
+.texto-eventos {
+  flex: 1;
+  max-width: 40%;
+}
+
+.texto-eventos h3 {
+  margin-bottom: 0.5em;
+  font-size: 2.2em;
+  position: relative;
+  color: #d5a37b;
+}
+
+.texto-eventos h3::before {
+  position: absolute;
+  width: 10%;
+  bottom: -10px;
+  height: 2px;
+  background-color: #d5a37b;
+  content: "";
+}
+
+.img-banner-eventos {
+  flex: 2;
+  overflow: hidden;
+  min-width: 550px;
+  height: 100%;
+}
+
+.img-banner-eventos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lista-eventos {
+  width: 100%;
+  margin-top: 4em;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 2em;
+}
+
+.lista-eventos .titulo {
+  text-align: center;
+  font-weight: 400;
+  color: #333;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.lista-eventos .titulo::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  transform: translateX(-20px);
+  top: -10px;
+  background-color: #333;
+  height: 3px;
+}
+
+.lista-eventos .titulo::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  transform: translateX(-100px);
+  bottom: -10px;
+  margin: auto;
+  background-color: #333;
+  height: 3px;
+}
+
+.lista-eventos .listagem {
+  display: flex;
+  grid-gap: 3em;
+  flex-wrap: wrap;
+  padding: 0em 1em;
+}
+
+.lista-eventos .listagem .evento {
+  flex: 1;
+  cursor: pointer;
+  height: 500px;
+  min-width: 200px;
+  transition: 0.4s;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.lista-eventos .listagem .evento p {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: 0.8s;
+}
+
+.lista-eventos .listagem .evento .localizacao {
+  visibility: hidden;
+  transform: translateX(-100%);
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.lista-eventos .listagem .evento .localizacao span {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.lista-eventos .listagem .evento .localizacao span i {
+  width: 35px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  justify-content: center;
+  height: 35px;
+  background-color: #4444447d;
+  color: #fff;
+}
+
+.lista-eventos .listagem .evento.ativo .localizacao {
+  padding: 1em;
+  visibility: visible;
+  transform: translateX(0);
+  bottom: 0;
+  background-color: #ffffff;
+  position: absolute;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  color: #444;
+}
+
+.lista-eventos .listagem .evento.ativo p {
+  padding: 1em;
+  visibility: visible;
+  transform: translateY(0);
+  background-color: #ffffff;
+  position: absolute;
+  width: 100%;
+  color: #444;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.lista-eventos .listagem .evento.ativo {
+  flex: 3;
+  transform: translateY(-0.5em);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.lista-eventos .listagem .evento .titulo-evento {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.5em;
+  background-color: #fff;
+  opacity: 1;
+  text-align: center;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: 1.2s;
+}
+
+.lista-eventos .listagem .evento.ativo .titulo-evento {
+  opacity: 0; 
+}

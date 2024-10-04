@@ -1,0 +1,95 @@
+<main>
+  <section class="descricao-premio-zumbi">
+    <div class="informacoes-banner">
+      <h1 class="titulo-banner">
+        Oque é o <span>"Prêmio Zumbi Dos Palmares"</span>?
+      </h1>
+      <div class="divisor"></div>
+      <p class="descricao-banner">
+        O Prêmio Zumbi dos Palmares, instituído pela Lei nº 2.789, de 22 de
+        outubro de 2021, é uma distinção que homenageia indivíduos e
+        instituições que se destacam na promoção da igualdade racial e na luta
+        contra o racismo em Corumbá. Este prêmio valoriza o papel do negro na
+        sociedade e é uma referência ao líder quilombola <span class="zumbi-palmares" pTooltip="Veja final da Home" tooltipPosition="top">Zumbi dos Palmares</span>,
+        símbolo da resistência negra no Brasil. Concedido anualmente durante as
+        comemorações do Dia da Consciência Negra, o prêmio visa reconhecer e
+        valorizar iniciativas e contribuições significativas para a promoção da
+        justiça social e dos direitos humanos.
+      </p>
+      <a
+        href="https://www.santos.sp.gov.br/?q=noticia/trofeu-zumbi-dos-palmares-reconhece-15-personalidades-de-santos-pelo-combate-ao-racismo"
+        target="_blank"
+      >
+        <button class="ver-mais">Veja Mais</button>
+      </a>
+    </div>
+  </section>
+  <section class="premiadores">
+    <div class="descricao-secao">
+      <h3>Ganhadores do Prêmio</h3>
+      <p>
+        Nesta parte abordares os ganhadores do prêmio
+        <span>"Zumbi dos Palmares"</span>. Trazendo data da prêmiasão, nome, e
+        algumas informações complementares sobre as figuras!
+      </p>
+      <span class="ods">
+        Esta iniciativa contempla o item 10 dos Objetivos de Desenvolvimento
+        Sustentável da ONU: Redução das Desigualdades.
+      </span>
+      <div class="img-ods"></div>
+    </div>
+    <div class="lista">
+      <div class="pessoa-elemento" *ngFor="let pessoa of pessoas_premiadas">
+        <div class="img-pessoa-premiada">
+          <img
+            [src]="
+              '../../../assets/Premiados/' +
+              (pessoa.imagem
+                ? pessoa.imagem.toLowerCase().replace(' ', '-')
+                : 'default-image') +
+              '.jpg'
+            "
+          />
+        </div>
+        <h6>{{ pessoa.nome }}</h6>
+        <button class="btn-ver-pessoa" (click)="showDialog(pessoa)">
+          Veja Mais
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+<p-dialog
+  header="{{ pessoa_selecionada?.nome }}"
+  [modal]="true"
+  [(visible)]="visible"
+  [style]="{ maxWidth: '60rem' }"
+  [modal]="true"
+  [responsive]="true"
+  [closable]="true"
+  [draggable]="false"
+>
+  <div class="body-dialog">
+    <div class="informacoes-pessoa">
+      <div class="img-pessoa">
+        <ng-container *ngIf="pessoa_selecionada?.imagem">
+          <img
+            [src]="
+              '../../../assets/Premiados/' + pessoa_selecionada?.imagem + '.jpg'
+            "
+          />
+        </ng-container>
+      </div>
+      <div class="data-premio">
+        <span class="data"
+          ><strong>Data: </strong> {{ pessoa_selecionada?.data }}</span
+        >
+      </div>
+    </div>
+    <div class="descricao-premio">
+      <p>
+        {{ pessoa_selecionada?.detalhes }}
+      </p>
+    </div>
+  </div>
+</p-dialog>

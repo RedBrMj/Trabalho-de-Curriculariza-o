@@ -1,0 +1,34 @@
+<header>
+  <nav>
+    <div class="img-logo">
+      <img src="" alt="" />
+    </div>
+    <ul class="links-nav">
+      <li><a routerLink="/">HOME</a></li>
+      <li><a routerLink="/sobre-nos">SOBRE NÓS</a></li>
+      <li><a routerLink="/eventos">EVENTOS</a></li>
+      <li><a routerLink="/ensino">ENSINO</a></li>
+      <li><a routerLink="/premiassões">PRÊMIO ZUMBI</a></li>
+    </ul>
+  </nav>
+</header>
+
+<p-sidebar
+  [(visible)]="sidebarVisible"
+  [style]="{
+    display: 'flex',
+    'flex-direction': 'column',
+    'heigth':'100%',
+    'z-index':'100000000',
+    'flex':'1'
+  }"
+>
+  <ul class="links-nav-responsivo">
+    <li><a routerLink="/">HOME</a></li>
+    <li><a routerLink="/sobre-nos">SOBRE NÓS</a></li>
+    <li><a routerLink="/eventos">EVENTOS</a></li>
+    <li><a routerLink="/ensino">ENSINO</a></li>
+    <li><a routerLink="/premiassões">PRÊMIO ZUMBI</a></li>
+  </ul>
+</p-sidebar>
+<i class="pi pi-bars" (click)="sidebarVisible = true"></i>

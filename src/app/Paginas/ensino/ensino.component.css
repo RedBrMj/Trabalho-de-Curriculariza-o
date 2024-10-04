@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Dosis:wght@200..800&display=swap");
+
+.banner-apresentacao {
+  width: 100%;
+  min-height: 83vh;
+  background: url("https://portalwhiz.com/wp-content/uploads/2021/07/dimi.jpg")
+    center center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.banner-apresentacao::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../../../assets/splash.jpg) center center no-repeat;
+  background-size: cover;
+  mix-blend-mode: screen;
+}
+
+.banner-apresentacao p {
+  background-color: #0000009c;
+  width: 100%;
+  padding: 1.5em;
+  color: #fff;
+  backdrop-filter: blur(3px);
+  max-width: 500px;
+}
+
+.grafico-1 {
+  min-height: 75vh;
+  padding: 2em 0;
+}
+
+.texto {
+  max-width: 75vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+}
+
+.texto .titulo-secao {
+  font-size: 2em;
+  font-family: "Arimo", sans-serif;
+}
+
+.texto p {
+  font-size: 16px;
+  color: #333;
+}
+
+.grafico-1 .grafico {
+  max-width: 65vw;
+  margin: auto;
+}
+
+.grafico-2 {
+  padding: 2em 0;
+  min-height: 50vh;
+}
+
+.grafico-2 .grafico {
+  max-width: 75vw;
+  margin: 1em auto;
+}

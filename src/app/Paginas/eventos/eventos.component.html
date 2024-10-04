@@ -1,0 +1,45 @@
+<main>
+  <section class="banner-eventos">
+    <div class="texto-eventos">
+      <h3>Eventos do Instituto</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+        consectetur omnis perferendis et, officiis saepe ipsam. Fuga eum optio
+        dolor quasi atque. Similique molestiae nihil voluptatum recusandae
+        architecto adipisci omnis libero veritatis, delectus corporis, ipsam
+        placeat unde numquam tempore dignissimos provident sapiente? Dolorum
+        illum sequi quam voluptatibus a ullam! Eos doloremque quod tempore
+        exercitationem, sequi, earum totam temporibus sapiente nisi repellat
+        debitis. Ut et veritatis sapiente quas magni nostrum aut!
+      </p>
+    </div>
+    <div class="img-banner-eventos">
+      <img
+        src="https://www.fema.edu.br/wp-content/uploads/2024/05/Prancheta-Festival.png"
+        alt=""
+      />
+    </div>
+  </section>
+  <hr />
+  <section class="lista-eventos">
+    <h4 class="titulo">Lista de Eventos</h4>
+    <div class="listagem">
+      <div
+        class="evento"
+        *ngFor="let evento of eventosDisponiveis"
+        [ngStyle]="{
+          'background': 'url(assets/Eventos/' + evento.imgSource + ') center center no-repeat',
+          'background-size': 'cover',
+        }"
+        (click)="abrirEvento(evento.titulo ?? '')"
+        [ngClass]="{ ativo: eventoAtivo === (evento.titulo ?? '') }"
+      >
+        <h5 class="titulo-evento">{{ evento.titulo }}</h5>
+        <p>{{ evento.descricao }}</p>
+        <div class="localizacao">
+          <span><i class="pi pi-map-marker"></i> {{ evento.local }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
