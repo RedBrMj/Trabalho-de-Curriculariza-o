@@ -10,5 +10,5 @@ export const routes: Routes = [
     {path: 'sobre-nos', component: SobreNosComponent},
     {path: 'eventos', component: EventosComponent},
     {path: 'ensino', component: EnsinoComponent},
-    {path: 'premiassões', component: PremiosComponent},
+    {path: 'premiacoes', component: PremiosComponent},
 ];

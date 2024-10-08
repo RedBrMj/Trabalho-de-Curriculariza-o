@@ -22,7 +22,6 @@ export class PremiosComponent {
   showDialog(pessoa: Premiacoes) {
     this.visible = true;
     this.pessoa_selecionada = pessoa;
-    console.log(this.pessoa_selecionada);
   }
 
   constructor(private http: BuscaHttpService) {
@@ -34,6 +33,5 @@ export class PremiosComponent {
       next: (pessoas_premiadas) => (this.pessoas_premiadas = pessoas_premiadas),
       error: (err) => console.error(err),
     });
-    console.log(this.pessoas_premiadas);
   }
 }

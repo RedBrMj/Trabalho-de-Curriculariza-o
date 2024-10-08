@@ -1,12 +1,27 @@
 <main>
   <section class="slider">
-    <div class="item-slide" *ngFor="let item of listaDeSlides" 
-    [ngClass]="{ ativo: slideAtivo === (item.titulo ?? '') }"
-    (click)="abrirSlider(item.titulo ?? '')">
+    <div
+      class="item-slide"
+      *ngFor="let item of listaDeSlides"
+      [ngClass]="{ ativo: slideAtivo === item.titulo }"
+      [ngStyle]="{
+        'background-image': item.imgSource
+          ? 'url(../../../assets/Slider/' + item.imgSource + '.jpg)'
+          : 'none',
+        'background-position': 'center center',
+        'background-repeat': 'no-repeat',
+        'background-size': 'cover'
+      }"
+      (click)="abrirSlider(item.titulo)"
+      >
+      <div class="imgae-slider"></div>
       <h4 class="titulo-slide">{{ item.titulo }}</h4>
-      <p class="descricao-slide">
-        {{ item.descricao }}
-      </p>
+      <div class="descricao-slide">
+        <span class="sub-titulo">{{ item.titulo }}</span>
+        <p>
+          {{ item.descricao }}
+        </p>
+      </div>
     </div>
   </section>
   <section class="marcos-historicos">
@@ -42,13 +57,16 @@
       </ng-template>
       <ng-template pTemplate="content" let-marcos>
         <p-card
-          [header]="marcos.titulo"
-          [subheader]="marcos.data"
-          [style]="{ maxWidth: '50vw', width: '100%', minWidth: '200px' }"
+          [style]="{ maxWidth: '50vw', width: '100%', minWidth: '200px', padding: 0 }"
+          class="card-body"
         >
+          <h5 class="titulo-card">{{ marcos.titulo }}</h5>
+          <hr>
+          <span class="data-card">{{ marcos.data }}</span>
           <p>
             {{ marcos.descricao }}
           </p>
+          <hr>
           <img
             [src]="marcos?.image"
             style="

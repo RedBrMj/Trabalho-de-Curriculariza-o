@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Dosis:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
 
 main {
   padding: 2% 0;
@@ -18,6 +19,39 @@ main .slider {
   position: relative;
 }
 
+main .slider .item-slide::before {
+  position: absolute;
+  width: 100%;
+  height: 45%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(51, 51, 51, 1) 35%,
+    rgba(0, 212, 255, 0) 100%
+  );
+  content: "";
+  inset: 0;
+  z-index: 1;
+}
+
+main .slider .item-slide::after {
+  position: absolute;
+  width: 100%;
+  height: 45%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(51, 51, 51, 1) 35%,
+    rgba(0, 212, 255, 0) 100%
+  );
+  content: "";
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
 main .slider::before {
   position: absolute;
   content: "";
@@ -25,16 +59,6 @@ main .slider::before {
   height: 5px;
   background-color: #333;
   bottom: -1em;
-  z-index: 1;
-}
-
-main .slider::after {
-  position: absolute;
-  content: "";
-  width: 45%;
-  height: 5px;
-  background-color: #333;
-  top: -1em;
   z-index: 1;
 }
 
@@ -47,24 +71,29 @@ main .slider .item-slide {
   max-width: 150px;
   border-radius: 50px;
   flex-basis: 200;
-  background-color: #333;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   cursor: pointer;
+  border: 5px solid #333;
   transition: 1s;
 }
 
 main .slider .item-slide.ativo {
-  background-color: red;
   flex: 3;
   transform: scale(1.05);
   max-width: 550px;
   border-radius: 0;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border: none;
+}
+
+main .slider .item-slide.ativo::after,
+main .slider .item-slide.ativo::before {
+  display: none;
 }
 
 main .slider .item-slide h4.titulo-slide {
@@ -72,6 +101,7 @@ main .slider .item-slide h4.titulo-slide {
   padding: 0.25em 1em;
   background-color: #fff;
   text-align: center;
+  font-size: 1.2em;
 }
 
 main .slider .item-slide.ativo h4.titulo-slide {
@@ -84,6 +114,7 @@ main .slider .item-slide.ativo h4.titulo-slide {
 main .slider .item-slide .descricao-slide {
   position: absolute;
   background-color: #fff;
+  border-top: 5px solid #333;
   width: 100%;
   min-height: 50px;
   bottom: 0;
@@ -96,6 +127,14 @@ main .slider .item-slide .descricao-slide {
 
 main .slider .item-slide.ativo .descricao-slide {
   opacity: 1;
+}
+
+main .slider .item-slide .descricao-slide .sub-titulo {
+  color: #444;
+  font-weight: bolder;
+  font-family: "Gowun Batang", serif;
+  font-size: 17px;
+  text-decoration: underline;
 }
 
 .marcos-historicos {
@@ -141,6 +180,17 @@ main .slider .item-slide.ativo .descricao-slide {
   font-size: 16px;
   max-width: 550px;
   color: #333;
+}
+
+.marcos-historicos .titulo-card{
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.marcos-historicos .data-card{
+  font-size: 14px;
+  font-weight: 800;
+  color: #777;
 }
 
 .btn-ver-info {
@@ -216,4 +266,34 @@ main .slider .item-slide.ativo .descricao-slide {
 
 .zumbi-palmares .informacoes p {
   color: #ccc;
+}
+
+@media (max-width: 950px){
+  .zumbi-palmares{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  main .slider .item-slide{
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    min-width: 250px;
+    min-height: 500px;
+    max-width: 250px;
+    border-radius: 0;
+    flex-basis: 200;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+  }
+  .card-body{
+    width: 50%;
+    padding: 0;
+  }
+
 }

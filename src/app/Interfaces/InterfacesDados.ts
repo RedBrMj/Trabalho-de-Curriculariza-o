@@ -1,8 +1,3 @@
-export interface local {
-  local: string;
-  porcentagem: number;
-}
-
 export interface Eventos {
   imgSource: string;
   titulo?: string;
@@ -13,8 +8,22 @@ export interface Eventos {
 export interface Premiacoes {
   nome: string;
   data: string;
-  imagem?: string;
   local: string;
   detalhes: string;
   descricao: string;
+  imagem?: string;
+}
+
+export interface Slider{
+  titulo: string;
+  descricao: string
+  imgSource: string;
+}
+
+export interface Marcos_Historicos{
+  titulo: string; 
+  data: string;
+  descricao: string;
+  image: string;
+  link?: string;
 }

@@ -28,6 +28,7 @@ footer .redes span {
   position: relative;
   border: 2px solid #fff;
   cursor: pointer;
+  font-size: 0.8em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,3 +82,4 @@ footer .copryght {
   font-size: 14px;
   font-weight: 600;
 }
+

@@ -132,9 +132,6 @@ main {
   font-style: italic;
 }
 
-/* Parte Talvez não Manter Abaixo */
-
-
 .missao .lista-missoes {
   width: 80vw;
   min-width: 350px;
@@ -264,11 +261,12 @@ main {
 }
 
 .valores{
-  width: 80%;
+  max-width: 80%;
   margin: auto;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
+  grid-gap: 2.8em;
   flex-wrap: wrap;
 }
 
@@ -306,4 +304,72 @@ main {
   display: flex;
   flex-direction: column;
   grid-gap: 5em;
+}
+
+
+.ods{
+  width: 100%;
+  min-height: 50vh;
+  background: url('https://es.movimentoods.org.br/wp-content/uploads/2021/06/todos-puzzle.png') center center no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-gap: 1em;
+}
+
+.ods::before{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #00000081;
+  content: '';
+  z-index: 10;
+}
+
+.ods p{
+  font-weight: 700;
+  color: #333;
+  z-index: 100;
+  max-width: 650px;
+  text-align: center;
+  padding: 1.5em;
+  background-color: #fff;
+}
+
+.ods .img-ods{
+  width: 250px;
+  height: 250px;
+  z-index: 100;
+}
+
+.ods .img-ods img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 950px) {
+  * {
+    text-align: center;
+  }
+  .valores{
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    grid-gap: 1em;
+  }
+  .missao{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }

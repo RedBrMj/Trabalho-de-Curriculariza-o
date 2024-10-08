@@ -1,17 +1,40 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { SidebarModule } from 'primeng/sidebar';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { SidebarModule } from 'primeng/sidebar';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [RouterLink, SidebarModule, ButtonModule, CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {
-  sidebarVisible: boolean = false;
+export class HeaderComponent implements OnInit {
+  navbarAberta: boolean = true;
+  @ViewChild('barraDeNavegacao') navbar: ElementRef | undefined;
 
+  rotaAtiva: string = '';
+
+  HOME = '/';
+  SOBRE = '/sobre-nos';
+  EVENTOS = '/eventos';
+  ENSINO = '/ensino';
+  PREMIACOES = '/premiacoes';
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.rotaAtiva = this.router.url;
+        this.alterarNavbar();
+      }
+    });
+  }
+
+  alterarNavbar() {
+    this.navbarAberta = !this.navbarAberta;
+  }
 }

@@ -177,25 +177,6 @@ main .premiadores .descricao-secao p span {
   color: #af5c19;
 }
 
-main .premiadores .descricao-secao .ods{
-  color: #444;
-  font-size: 17px;
-  font-style: oblique;
-}
-
-
-main .premiadores .descricao-secao .img-ods{
-  width: 150px;
-  height: 150px;
-  background: url('https://gtagenda2030.org.br/wp-content/uploads/2019/10/ods10.jpg?w=640') center center no-repeat;
-  border-radius: 8px;
-  background-size: cover;
-  margin: auto;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-  rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  position: relative;
-}
-
 main .premiadores .lista {
   width: 80%;
   display: flex;
@@ -316,4 +297,10 @@ main .premiadores .lista .pessoa-elemento .btn-ver-pessoa:hover {
   color: #444;
   border-left: 5px double #444;
   padding-left: 0.4em;
+}
+
+@media (max-width: 950px){
+  main .descricao-premio-zumbi{
+    padding-top: 5em;
+  } 
 }

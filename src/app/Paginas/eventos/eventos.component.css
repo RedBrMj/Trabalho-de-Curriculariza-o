@@ -192,3 +192,19 @@ main .banner-eventos {
 .lista-eventos .listagem .evento.ativo .titulo-evento {
   opacity: 0; 
 }
+
+@media (max-width: 950px){
+  main .banner-eventos{
+    padding-top: 5em;
+  } 
+  .texto-eventos{
+    max-width: 90%;
+    text-align: center;
+  }
+  .lista-eventos .listagem .evento.ativo{
+    text-align: center;
+  }
+  .lista-eventos .listagem .evento.ativo .localizacao{
+    width: 100%;
+  }
+}
