@@ -1,3 +1,4 @@
+<p-toast />
 <main>
   <section class="slider">
     <div
@@ -12,10 +13,11 @@
         'background-repeat': 'no-repeat',
         'background-size': 'cover'
       }"
-      (click)="abrirSlider(item.titulo)"
-      >
+      (mouseenter)="abrirSlider(item.titulo)"
+    >
       <div class="imgae-slider"></div>
       <h4 class="titulo-slide">{{ item.titulo }}</h4>
+      <span id="icon-slider" class="pi pi-bookmark"><p></p></span>
       <div class="descricao-slide">
         <span class="sub-titulo">{{ item.titulo }}</span>
         <p>
@@ -24,87 +26,63 @@
       </div>
     </div>
   </section>
-  <section class="marcos-historicos">
-    <div class="header-secao">
-      <h2>Marcos Históricos</h2>
-      <p>
-        A história negra é rica e marcada por lutas, resistência e conquistas em
-        diversas partes do mundo. Aqui estão alguns dos marcos mais importantes
-        ao longo dos séculos:
-      </p>
-    </div>
-    <p-timeline
-      responsive="true"
-      [value]="listaDeMarcosHistoricos"
-      align="alternate"
-      styleClass="customized-timeline"
-    >
-      <ng-template pTemplate="marker" let-marcos>
-        <span
-          style="
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #333;
-            color: #fff;
-            border-radius: 50%;
-          "
+  <section class="formulario">
+    <div class="banner-form"></div>
+    <form [formGroup]="cadastro" (ngSubmit)="enviarCadastro()">
+      <h2 class="titulo-secao">Junte-se a nós!</h2>
+      <div class="input-element">
+        <label for="nome-completo">Nome Completo</label>
+        <input
+          pInputText
+          type="text"
+          id="nome-completo"
+          placeholder="Seu nome..."
+          formControlName="nome"
+        />
+      </div>
+
+      <div class="input-element">
+        <label for="email">Email</label>
+        <input
+          pInputText
+          type="email"
+          id="email"
+          placeholder="@gmail - @outlook..."
+          formControlName="email"
+        />
+      </div>
+
+      <div class="input-element">
+        <label for="idade">Idade</label>
+        <input
+          pInputText
+          type="number"
+          id="idade"
+          placeholder="Maiores de 18 anos"
+          formControlName="idade"
+          min="0"
+        />
+        <div
+          *ngIf="cadastro.get('idade')?.hasError('idadeInvalida')"
+          class="error"
         >
-          <i class="pi pi-bookmark"></i>
-        </span>
-      </ng-template>
-      <ng-template pTemplate="content" let-marcos>
-        <p-card
-          [style]="{ maxWidth: '50vw', width: '100%', minWidth: '200px', padding: 0 }"
-          class="card-body"
-        >
-          <h5 class="titulo-card">{{ marcos.titulo }}</h5>
-          <hr>
-          <span class="data-card">{{ marcos.data }}</span>
-          <p>
-            {{ marcos.descricao }}
-          </p>
-          <hr>
-          <img
-            [src]="marcos?.image"
-            style="
-              width: 100%;
-              height: 250px;
-              display: block;
-              margin-bottom: 1em;
-              object-fit: cover;
-            "
-          />
-          <a href="{{ marcos?.links }}" *ngIf="marcos.links" target="_blank"
-            ><button class="btn-ver-info">Leia Mais</button></a
-          >
-        </p-card>
-      </ng-template>
-    </p-timeline>
-  </section>
-  <section class="zumbi-palmares">
-    <div class="informacoes">
-      <h2 class="titulo-secao">Quem foi <span>Zumbi dos Palmares</span>?</h2>
-      <hr />
-      <p>
-        Zumbi dos Palmares foi um líder quilombola e uma figura emblemática da
-        luta contra a escravidão no Brasil. Nascido em 1655, em um quilombo na
-        região de Alagoas, Zumbi se destacou por sua resistência e por lutar
-        pela liberdade dos negros escravizados. Ele se tornou o líder do
-        Quilombo dos Palmares, uma comunidade formada por africanos fugitivos e
-        seus descendentes, que se tornou um símbolo da resistência negra.
-        <br />
-        Zumbi defendeu a autonomia e os direitos dos quilombolas, promovendo um
-        governo próprio e um modo de vida livre. Sua luta culminou em um
-        conflito constante com as autoridades coloniais portuguesas, que
-        buscavam destruir o quilombo. Em 20 de novembro de 1695, Zumbi foi
-        capturado e assassinado, mas seu legado perdura como um ícone da
-        resistência negra e da busca por igualdade no Brasil. O Dia da
-        Consciência Negra, celebrado em 20 de novembro, homenageia sua memória e
-        luta.
-      </p>
-    </div>
+          A idade mínima é 18 anos
+        </div>
+      </div>
+
+      <div class="input-element">
+        <label for="telefone-contato">Telefone de Contato</label>
+        <p-inputMask
+          id="telefone-contato"
+          placeholder="00 000 0000-0000"
+          mask="+99(999)999999999"
+          formControlName="telefone"
+        />
+      </div>
+
+      <div class="btn-form">
+        <button [disabled]="!cadastro.valid">Enviar Solicitação</button>
+      </div>
+    </form>
   </section>
 </main>

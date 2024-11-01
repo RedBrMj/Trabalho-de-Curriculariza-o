@@ -13,7 +13,7 @@ main .slider {
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-gap: 3em;
+  grid-gap: 1em;
   padding: 2em 1em;
   flex-wrap: wrap;
   position: relative;
@@ -32,9 +32,7 @@ main .slider .item-slide::before {
   );
   content: "";
   inset: 0;
-  z-index: 1;
 }
-
 main .slider .item-slide::after {
   position: absolute;
   width: 100%;
@@ -49,9 +47,7 @@ main .slider .item-slide::after {
   content: "";
   bottom: 0;
   left: 0;
-  z-index: 1;
 }
-
 main .slider::before {
   position: absolute;
   content: "";
@@ -59,26 +55,48 @@ main .slider::before {
   height: 5px;
   background-color: #333;
   bottom: -1em;
-  z-index: 1;
 }
 
 main .slider .item-slide {
   position: relative;
   overflow: hidden;
   flex: 1;
-  min-width: 100px;
+  border-radius: 40px;
+  min-width: 125px;
   min-height: 500px;
-  max-width: 150px;
-  border-radius: 50px;
+  max-width: 175px;
   flex-basis: 200;
-  padding: 0;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  border: 5px solid #333;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   transition: 1s;
+}
+
+main .slider #icon-slider {
+  position: absolute;
+  color: #fff;
+  top: 35px;
+  font-size: 1.5em;
+  border: 2px solid #fff;
+  padding: 0.5em;
+  border-radius: 50%;
+  background-color: #0606065e;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+main .slider .item-slide.ativo #icon-slider {
+  border-radius: 50%;
+  top: -100%;
 }
 
 main .slider .item-slide.ativo {
@@ -137,144 +155,86 @@ main .slider .item-slide .descricao-slide .sub-titulo {
   text-decoration: underline;
 }
 
-.marcos-historicos {
-  width: 100%;
-  min-height: 50vh;
-  padding-top: 2em;
-  margin-top: 1.5em;
-  flex-direction: column;
+main .formulario {
+  overflow: hidden;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin: 2em 0;
+  grid-gap: 1em;
 }
 
-.marcos-historicos .header-secao {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 1.2em;
-}
-
-.marcos-historicos .header-secao h2 {
-  font-family: "Arimo", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-}
-
-.marcos-historicos .header-secao h2::before {
-  position: absolute;
-  content: "";
-  width: 125px;
-  height: 2px;
-  background-color: #000;
-  bottom: -0.4em;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.marcos-historicos .header-secao p {
-  font-family: "Dosis", sans-serif;
-  font-size: 16px;
-  max-width: 550px;
-  color: #333;
-}
-
-.marcos-historicos .titulo-card{
-  font-weight: 800;
-  font-size: 22px;
-}
-
-.marcos-historicos .data-card{
-  font-size: 14px;
-  font-weight: 800;
-  color: #777;
-}
-
-.btn-ver-info {
-  width: 150px;
-  height: 50px;
-  border: none;
-  background-color: rgb(176, 134, 82);
-  color: #fff;
-  transition: 0.6s;
-}
-
-.btn-ver-info:hover {
-  transform: scale(1.05);
-}
-
-.zumbi-palmares {
-  width: 100%;
-  min-height: 50vh;
-  background: url("https://pt.org.br/wp-content/uploads/2023/12/zumbi-palmares-1.jpeg")
-    center center no-repeat;
+main .banner-form{
+  background: url(../../../assets/formulario.png) center center no-repeat;
   background-size: cover;
+  width: 100%;
+  max-width: 460px;
+  height: 100%;
+  min-height: 460px;
+}
+
+main .formulario form {
+  padding: 2em 1em;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  min-width: 450px;
+  grid-gap: 1em;
+}
+
+main .formulario form .input-element {
+  display: flex;
+  grid-gap: 0.25em;
+  justify-content: center;
+  flex-direction: column;
+}
+main .formulario form .btn-form {
   display: flex;
   align-items: center;
-  padding: 3em;
-  justify-content: end;
+  justify-content: center;
+  width: 100%;
 }
 
-.zumbi-palmares .informacoes {
-  background-color: #0000007d;
-  backdrop-filter: blur(2px);
-  padding: 1em;
-  text-align: center;
-  max-width: 500px;
-  position: relative;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.zumbi-palmares .informacoes::before {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -10px;
-  content: "";
-  background-color: #fff;
-  width: 10px;
-  height: 80%;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.zumbi-palmares .informacoes::after {
-  position: absolute;
-  right: -10px;
-  transform: translateY(-50%);
-  top: 50%;
-  content: "";
-  background-color: #fff;
-  height: 80%;
-  width: 10px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.zumbi-palmares h2 {
+main .formulario form .btn-form button {
+  outline: none;
+  border: none;
+  padding: 0.5em 1em;
+  background-color: #333;
   color: #fff;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.4s;
 }
 
-.zumbi-palmares h2 span {
-  color: #dec129;
-  text-decoration: underline;
+main .formulario form .btn-form button:disabled {
+  background-color: #eee;
+  color: #333;
+  border: 1px solid #333;
 }
 
-.zumbi-palmares .informacoes p {
-  color: #ccc;
+main .formulario form .btn-form button:disabled:hover {
+  background-color: #eee;
+  color: #333;
+  cursor: not-allowed;
 }
 
-@media (max-width: 950px){
-  .zumbi-palmares{
+main .formulario form .btn-form button:hover {
+  transform: scale(1.05);
+  color: #fff;
+  background: #444;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  .zumbi-palmares {
     display: flex;
     align-items: center;
     justify-content: center;
-  } 
-  main .slider .item-slide{
+  }
+  main .slider .item-slide {
     position: relative;
     overflow: hidden;
     flex: 1;
@@ -291,9 +251,8 @@ main .slider .item-slide .descricao-slide .sub-titulo {
     cursor: pointer;
     border: none;
   }
-  .card-body{
+  .card-body {
     width: 50%;
     padding: 0;
   }
-
 }

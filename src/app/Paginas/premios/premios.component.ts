@@ -19,7 +19,7 @@ export class PremiosComponent {
   pessoas_premiadas?: Premiacoes[];
   pessoa_selecionada?: Premiacoes;
 
-  showDialog(pessoa: Premiacoes) {
+  public showDialog(pessoa: Premiacoes) {
     this.visible = true;
     this.pessoa_selecionada = pessoa;
   }
@@ -28,7 +28,7 @@ export class PremiosComponent {
     this.getPremiados();
   }
 
-  getPremiados(): void {
+  public getPremiados(): void {
     this.http.buscarGanhadoresDoPremioZumbi().subscribe({
       next: (pessoas_premiadas) => (this.pessoas_premiadas = pessoas_premiadas),
       error: (err) => console.error(err),

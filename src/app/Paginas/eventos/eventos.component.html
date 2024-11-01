@@ -3,14 +3,11 @@
     <div class="texto-eventos">
       <h3>Eventos do Instituto</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-        consectetur omnis perferendis et, officiis saepe ipsam. Fuga eum optio
-        dolor quasi atque. Similique molestiae nihil voluptatum recusandae
-        architecto adipisci omnis libero veritatis, delectus corporis, ipsam
-        placeat unde numquam tempore dignissimos provident sapiente? Dolorum
-        illum sequi quam voluptatibus a ullam! Eos doloremque quod tempore
-        exercitationem, sequi, earum totam temporibus sapiente nisi repellat
-        debitis. Ut et veritatis sapiente quas magni nostrum aut!
+        O Instituto do Negro Zimbauê, é uma organização que desempenha um papel
+        fundamental na promoção da cultura negra, na defesa dos direitos humanos
+        e na luta contra o racismo. Ao longo de seus anos de existência, o
+        instituto tem organizado diversos eventos que visam conscientizar a
+        sociedade sobre a importância da diversidade e da igualdade racial.
       </p>
     </div>
     <div class="img-banner-eventos">
@@ -24,20 +21,21 @@
   <section class="lista-eventos">
     <h4 class="titulo">Lista de Eventos</h4>
     <div class="listagem">
-      <div
-        class="evento"
-        *ngFor="let evento of eventosDisponiveis"
-        [ngStyle]="{
-          'background': 'url(assets/Eventos/' + evento.imgSource + ') center center no-repeat',
-          'background-size': 'cover',
-        }"
-        (click)="abrirEvento(evento.titulo ?? '')"
-        [ngClass]="{ ativo: eventoAtivo === (evento.titulo ?? '') }"
-      >
-        <h5 class="titulo-evento">{{ evento.titulo }}</h5>
-        <p>{{ evento.descricao }}</p>
-        <div class="localizacao">
-          <span><i class="pi pi-map-marker"></i> {{ evento.local }}</span>
+      <div class="card-evento" *ngFor="let evento of eventosDisponiveis">
+        <div class="imagem-evento">
+          <div class="header-card">
+            <h6>{{ evento?.titulo }}</h6>
+          </div>
+          <div
+            class="img-card"
+            [ngStyle]="{
+            'background': 'url(assets/Eventos/' + evento.imgSource + ') center center no-repeat',
+            'background-size': 'cover',
+          }"
+          ></div>
+          <div class="body-card">
+            <p>{{ evento?.descricao }}</p>
+          </div>
         </div>
       </div>
     </div>

@@ -22,7 +22,6 @@ import { CommonModule } from '@angular/common'; // Manter CommonModule para as d
 export class AppComponent {
   title = 'Projeto-Zimbabue';
   visible: boolean = false;
-
   yourConfirmFunction(): void {
     this.visible = true;
   }

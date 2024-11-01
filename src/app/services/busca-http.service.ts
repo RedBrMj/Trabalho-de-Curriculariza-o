@@ -7,22 +7,27 @@ import { Eventos, Marcos_Historicos, Premiacoes, Slider } from '../Interfaces/In
   providedIn: 'root',
 })
 export class BuscaHttpService {
-  private URL_DADOS = 'http://localhost:3000';
+  private URL_DADOS_SERVIDOR = 'http://localhost:3000';
+  private URL_API_SERVIDOR = 'http://localhost:3001/api/usuarios';
   constructor(private http: HttpClient) {}
 
-  buscaDeMomentosHistoricos(): Observable<Marcos_Historicos[]> {
-    return this.http.get<Marcos_Historicos[]>(`${this.URL_DADOS}/marcos-historicos`);
+  public buscaDeMomentosHistoricos(): Observable<Marcos_Historicos[]> {
+    return this.http.get<Marcos_Historicos[]>(`${this.URL_DADOS_SERVIDOR}/marcos-historicos`);
   }
 
-  buscarGanhadoresDoPremioZumbi(): Observable<Premiacoes[]> {
-    return this.http.get<Premiacoes[]>(`${this.URL_DADOS}/pessoas_premiadas`);
+  public buscarGanhadoresDoPremioZumbi(): Observable<Premiacoes[]> {
+    return this.http.get<Premiacoes[]>(`${this.URL_DADOS_SERVIDOR}/pessoas_premiadas`);
   }
 
-  buscarEventos(): Observable<Eventos[]>{
-    return this.http.get<Eventos[]>(`${this.URL_DADOS}/eventos`);
+  public buscarEventos(): Observable<Eventos[]>{
+    return this.http.get<Eventos[]>(`${this.URL_DADOS_SERVIDOR}/eventos`);
   }
 
-  buscarSliders(): Observable<Slider[]>{
-    return this.http.get<Slider[]>(`${this.URL_DADOS}/sliders`);
+  public buscarSliders(): Observable<Slider[]>{
+    return this.http.get<Slider[]>(`${this.URL_DADOS_SERVIDOR}/sliders`);
+  }
+
+  public enviarSolicitacao(solicitacao: any): Observable<any> {
+    return this.http.post(`${this.URL_API_SERVIDOR}`, solicitacao);
   }
 }

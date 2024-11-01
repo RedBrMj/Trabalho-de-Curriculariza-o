@@ -31,12 +31,4 @@ export class SobreNosComponent {
       descricao: "Acreditamos no poder de capacitar indivíduos e comunidades para serem agentes de mudança em suas próprias vidas. Por meio da educação, formação e desenvolvimento de habilidades, buscamos promover a autonomia, para que cada pessoa possa alcançar sua independência e contribuir de forma significativa para a sociedade."
     },
   ];
-
-  participantes: any[] = [
-    {
-      nome: "Mônica da Silva",
-      cargo: "Presidente do Zimbauê",
-      foto: "https://www.assiscity.com/img/2014/11/18/fileg_235433.jpg"
-    }
-  ]
 }

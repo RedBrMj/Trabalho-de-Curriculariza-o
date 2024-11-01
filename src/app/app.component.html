@@ -1,9 +1,13 @@
 <main>
-  <header><app-header></app-header></header>
-  <section>
+  <header>
+    <div class="navbar">
+      <app-header></app-header>
+    </div>
+  </header>
+  <section id="body">
     <router-outlet></router-outlet>
+    <footer>
+      <app-footer></app-footer>
+    </footer>
   </section>
-  <footer>
-    <app-footer></app-footer>
-  </footer>
 </main>

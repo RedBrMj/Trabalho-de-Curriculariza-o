@@ -1,4 +1,4 @@
-<header
+<!-- <header
   id="barraDeNavegacao"
   #barraDeNavegacao
   [ngClass]="{ 'navbar-ativa': navbarAberta, 'navbar-fechada': !navbarAberta }"
@@ -26,4 +26,30 @@
     </ul>
   </nav>
 </header>
-<i class="pi pi-bars" id="fora-header" (click)="alterarNavbar()"></i>
+<i class="pi pi-bars" id="fora-header" (click)="alterarNavbar()"></i> -->
+<header [ngClass]="{ 'navbar-ativa': navbarAberta, 'navbar-fechada': !navbarAberta }">
+  <div class="header-sidebar">
+    <div class="logofoto"></div>
+    <h4 class="logotipo">Zimbaue</h4>
+  </div>
+  <div class="link-pages">
+    <ul>
+      <li [ngClass]="{ ativo: rotaAtiva === HOME }">
+        <a routerLink="/"><i class="pi pi-home"></i>Home</a>
+      </li>
+      <li [ngClass]="{ ativo: rotaAtiva === SOBRE }">
+        <a routerLink="/sobre-nos"><i class="pi pi-users"></i>Sobre Nós</a>
+      </li>
+      <li [ngClass]="{ ativo: rotaAtiva === EVENTOS }">
+        <a routerLink="/eventos"><i class="pi pi-calendar"></i>Eventos</a>
+      </li>
+      <li [ngClass]="{ ativo: rotaAtiva === ENSINO }">
+        <a routerLink="/ensino"><i class="pi pi-book"></i>Ensino</a>
+      </li>
+      <li [ngClass]="{ ativo: rotaAtiva === PREMIACOES }">
+        <a routerLink="/premiacoes"><i class="pi pi-trophy"></i>Prêmio Zumbi</a>
+      </li>
+    </ul>
+  </div>
+  <i class="pi pi-bars" id="fora-header" (click)="alterarNavbar()"></i>
+</header>

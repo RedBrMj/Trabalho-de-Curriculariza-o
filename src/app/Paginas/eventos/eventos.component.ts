@@ -11,13 +11,12 @@ import { BuscaHttpService } from '../../services/busca-http.service';
   styleUrl: './eventos.component.css',
 })
 export class EventosComponent {
-  eventoAtivo: string = '';
 
   constructor(private http: BuscaHttpService) {
     this.buscarListaDeEventos();
   }
 
-  buscarListaDeEventos(): void {
+  public buscarListaDeEventos(): void {
     this.http.buscarEventos().subscribe({
       next: (eventosDisponiveis) =>
         (this.eventosDisponiveis = eventosDisponiveis),
@@ -26,9 +25,4 @@ export class EventosComponent {
   }
 
   eventosDisponiveis!: Eventos[];
-
-  abrirEvento(evento: string) {
-    this.eventoAtivo = evento;
-    console.log(this.eventoAtivo);
-  }
 }

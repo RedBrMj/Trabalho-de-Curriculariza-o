@@ -1,9 +1,36 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-section{
-    flex: 1;
-    background-color: #fff;
+
+main {
+  display: flex;
+}
+
+.navbar {
+  position: fixed;
+  height: 100vh;
+  z-index: 1;
+  /* background-color: red; */
+}
+
+#body {
+  margin-left: 175px;
+  flex-grow: 1;
+}
+
+@media (max-width: 750px) {
+  main{
+    flex-direction: column;
+  }
+  #body {
+    margin-top: 10px;
+    margin-left: 0;
+    flex-grow: 1;
+  }
+  .navbar{
+    height: 100%;
+    position: relative;
+  }
 }

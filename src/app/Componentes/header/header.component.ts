@@ -23,8 +23,9 @@ export class HeaderComponent implements OnInit {
   ENSINO = '/ensino';
   PREMIACOES = '/premiacoes';
 
-  constructor(private router: Router) {}
-
+  constructor(
+    private router: Router,
+  ) {}
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {

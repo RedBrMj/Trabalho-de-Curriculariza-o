@@ -6,18 +6,29 @@
       </h1>
       <div class="divisor"></div>
       <p class="descricao-banner">
-        O Prêmio Zumbi dos Palmares, instituído pela Lei nº 2.789, de 22 de
-        outubro de 2021, é uma distinção que homenageia indivíduos e
-        instituições que se destacam na promoção da igualdade racial e na luta
-        contra o racismo em Corumbá. Este prêmio valoriza o papel do negro na
-        sociedade e é uma referência ao líder quilombola <span class="zumbi-palmares" pTooltip="Veja final da Home" tooltipPosition="top">Zumbi dos Palmares</span>,
-        símbolo da resistência negra no Brasil. Concedido anualmente durante as
-        comemorações do Dia da Consciência Negra, o prêmio visa reconhecer e
-        valorizar iniciativas e contribuições significativas para a promoção da
-        justiça social e dos direitos humanos.
+        O Diploma de Mérito Zumbi dos Palmares de Assis é uma honraria concedida
+        a personalidades negras do município de Assis que se destacam em suas
+        áreas de atuação e contribuem para a luta contra o preconceito e a
+        desigualdade racial. Essa homenagem é uma forma de reconhecer a
+        importância da cultura afrodescendente e de celebrar a história e as
+        conquistas do povo negro.
+      </p>
+      <p class="descricao-banner">
+        A escolha do nome
+        <span
+          class="zumbi-palmares"
+          pTooltip="Veja final da Home"
+          tooltipPosition="top"
+          >Zumbi dos Palmares</span
+        >
+        para essa homenagem não é por acaso. Zumbi foi um líder quilombola que
+        lutou contra a escravidão no Brasil colonial. Ele se tornou um símbolo
+        da resistência negra e da luta por liberdade. Ao nomear o prêmio em sua
+        homenagem, busca-se valorizar a história e a luta do povo negro e
+        inspirar novas gerações a seguirem seus passos.
       </p>
       <a
-        href="https://www.santos.sp.gov.br/?q=noticia/trofeu-zumbi-dos-palmares-reconhece-15-personalidades-de-santos-pelo-combate-ao-racismo"
+        href="https://www.assis.sp.leg.br/imprensa/noticias/camara-entrega-diploma-de-merito-201czumbi-dos-palmares201d"
         target="_blank"
       >
         <button class="ver-mais">Veja Mais</button>
@@ -28,11 +39,14 @@
     <div class="descricao-secao">
       <h3>Ganhadores do Prêmio</h3>
       <p>
-        Nesta parte abordares os ganhadores do prêmio
+        Nesta parte abordares os ganhadores do Diploma de Mérito
         <span>"Zumbi dos Palmares"</span>. Trazendo data da prêmiasão, nome, e
         algumas informações complementares sobre as figuras!
       </p>
-      <i class="observacoes">Onservação: Alguns não foram encontrados fotos, por isso estão com a imagem do premio!</i>
+      <i class="observacoes"
+        >Observação: Alguns não foram encontrados fotos, por isso estão com a
+        imagem do premio!</i
+      >
     </div>
     <div class="lista">
       <div class="pessoa-elemento" *ngFor="let pessoa of pessoas_premiadas">
@@ -67,25 +81,12 @@
 >
   <div class="body-dialog">
     <div class="informacoes-pessoa">
-      <div class="img-pessoa">
-        <ng-container *ngIf="pessoa_selecionada?.imagem">
-          <img
-            [src]="
-              '../../../assets/Premiados/' + pessoa_selecionada?.imagem + '.jpg'
-            "
-          />
-        </ng-container>
+      <div class="descricao-premio">
+        <p>
+          {{ pessoa_selecionada?.detalhes }}
+        </p>
+        <span><strong>Data: </strong> {{ pessoa_selecionada?.data }}</span>
       </div>
-      <div class="data-premio">
-        <span class="data"
-          ><strong>Data: </strong> {{ pessoa_selecionada?.data }}</span
-        >
-      </div>
-    </div>
-    <div class="descricao-premio">
-      <p>
-        {{ pessoa_selecionada?.detalhes }}
-      </p>
     </div>
   </div>
 </p-dialog>

@@ -1,11 +1,11 @@
-header {
+/* header {
   width: 100%;
   display: flex;
   background-color: #340505;
-  border-bottom: 5px solid #333;
+  border-bottom: 5px solid #fff;
 }
 
-header nav {
+header {
   width: 100%;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@ header nav {
   flex-wrap: wrap;
 }
 
-header nav .img-logo {
+header .img-logo {
   width: 120px;
   height: 120px;
   overflow: hidden;
@@ -26,18 +26,18 @@ header nav .img-logo {
   padding: 5px;
 }
 
-header nav ul {
+header ul {
   display: flex;
   align-items: center;
   justify-content: center;
   grid-gap: 5em;
 }
 
-header nav ul li {
+header ul li {
   list-style: none;
 }
 
-header nav ul li a {
+header ul li a {
   text-decoration: none;
   color: #fff;
   font-weight: 700;
@@ -46,14 +46,15 @@ header nav ul li a {
   text-align: center;
   overflow: hidden;
   z-index: 3;
+  transition: 0.1s;
 }
 
-header nav ul li.ativo a {
+header ul li.ativo a {
   background-color: #fff;
-  color: #333;
+  color: #fff;
 }
 
-header nav ul li a::before {
+header ul li a::before {
   position: absolute;
   content: "";
   background-color: #fff;
@@ -66,11 +67,11 @@ header nav ul li a::before {
   z-index: 10;
 }
 
-header nav ul li a:hover::before {
+header ul li a:hover::before {
   width: 100%;
 }
 
-.links-nav-responsivo {
+.links-responsivo {
   flex: 1;
   list-style: none;
   display: flex;
@@ -78,14 +79,14 @@ header nav ul li a:hover::before {
   flex-direction: column;
 }
 
-.links-nav-responsivo li a {
+.links-responsivo li a {
   text-decoration: none;
   color: black;
   position: relative;
   font-size: 1.5em;
 }
 
-.links-nav-responsivo li a:before {
+.links-responsivo li a:before {
   border-bottom: 5px solid #000;
   transform: translateY(35px);
   opacity: 0;
@@ -97,7 +98,7 @@ header nav ul li a:hover::before {
   transition: 0.4s;
 }
 
-.links-nav-responsivo li a::after {
+.links-responsivo li a::after {
   border-top: 5px solid #000;
   opacity: 0;
   content: "";
@@ -114,8 +115,130 @@ header nav ul li a:hover::before {
   height: 60px;
   position: fixed;
   right: 50%;
+  bottom: 0;
   transform: translate(50%);
-  bottom: 10px;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  z-index: 1000000000000000;
+  padding: 0.5em;
+  display: none;
+}
+*/
+
+header {
+  width: 175px;
+  height: 100vh;
+  background-color: #652c00;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-right: 2px solid #fff;
+  transition: .6s;
+}
+
+header .header-sidebar {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1em;
+  align-items: center;
+}
+
+header .logofoto {
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  background: url(../../../assets/logo.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+header .logotipo {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #fff;
+  position: relative;
+}
+
+header .link-pages ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1em;
+  padding: 0;
+}
+
+header .link-pages ul li {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+}
+
+header .link-pages ul li a {
+  font-size: 1em;
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  padding: 0.5em;
+  transition: 0.5s;
+  align-items: center;
+  justify-content: start;
+  grid-gap: 0.5em;
+  z-index: 1000000;
+}
+
+header .link-pages ul li::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  background-color: #ffffff4f;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+header .link-pages ul li:hover::before {
+  width: 100%;
+}
+
+header .link-pages ul li a i {
+  font-size: 1.2em;
+  color: #fff;
+  padding: 8px;
+  border-radius: 50%;
+  font-weight: 200;
+  background-color: #ffffff4f;
+}
+
+header .link-pages ul li:hover a {
+  color: #fff;
+}
+
+header .link-pages ul li.ativo a {
+  color: #fff;
+  background-color: #ffffff4f;
+}
+
+header .link-pages ul li.ativo a:hover {
+  background-color: transparent;
+}
+
+#fora-header {
+  width: 50%;
+  height: 60px;
+  bottom: 0;
   font-size: 2em;
   display: flex;
   align-items: center;
@@ -129,123 +252,38 @@ header nav ul li a:hover::before {
   display: none;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 750px) {
   #fora-header {
     display: flex;
   }
   header {
-    background: radial-gradient(
-      circle farthest-side at 0% 50%,
-      #282828 23.5%,
-      rgba(255, 170, 0, 0) 0
-    )
-    21px 30px,
-  radial-gradient(
-      circle farthest-side at 0% 50%,
-      #2c3539 24%,
-      rgba(240, 166, 17, 0) 0
-    )
-    19px 30px,
-  linear-gradient(
-      #282828 14%,
-      rgba(240, 166, 17, 0) 0,
-      rgba(240, 166, 17, 0) 85%,
-      #282828 0
-    )
-    0 0,
-  linear-gradient(
-      150deg,
-      #282828 24%,
-      #2c3539 0,
-      #2c3539 26%,
-      rgba(240, 166, 17, 0) 0,
-      rgba(240, 166, 17, 0) 74%,
-      #2c3539 0,
-      #2c3539 76%,
-      #282828 0
-    )
-    0 0,
-  linear-gradient(
-      30deg,
-      #282828 24%,
-      #2c3539 0,
-      #2c3539 26%,
-      rgba(240, 166, 17, 0) 0,
-      rgba(240, 166, 17, 0) 74%,
-      #2c3539 0,
-      #2c3539 76%,
-      #282828 0
-    )
-    0 0,
-  linear-gradient(90deg, #2c3539 2%, #282828 0, #282828 98%, #2c3539 0%) 0 0
-    #282828;
-background-size: 40px 60px;    backdrop-filter: blur(2px);
-    margin: 0 auto;
+    width: 100vw !important;
+    height: 75px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1em 0;
+    flex-direction: row;
     position: fixed;
-    z-index: 10000000000000;
-    min-height: 100vh;
-    width: 100%;
-    transition: 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+    top: 0;
+    z-index: 1000000000000000000;
+    border: none;
   }
-  header nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2em 0;
+  .header-sidebar,
+  .link-pages {
+    display: none !important;
+    transform: translateY(-100%);
+  }
+  header.navbar-ativa{
     height: 100%;
-    width: 100%;
-    grid-gap: 1.8em;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1em 0 0 0;
   }
-  header nav .img-logo {
-    display: none;
-  }
-  header nav ul li {
-    width: 60%;
-    min-width: 200px;
+  header.navbar-ativa ul{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    padding: 1em 0;
+    width: 90vw;
   }
-  header nav ul li a {
-    text-decoration: none;
-    font-size: clamp(1.25rem, -0.125rem + 4.6667vw, 1.6rem);
-    color: #333;
-    font-weight: 700;
-    position: relative;
-    padding: 0.5em;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  header nav ul li.ativo,
-  header nav ul li.ativo a {
-    color: #fff;
-    background-color: #914f00;
-  }
-
-  header nav ul li.ativo {
-    border: 5px solid #fff;
-    transform: scale(1.05);
-  }
-
-  header.navbar-fechada {
-    transform: translateY(-100vh);
-  }
-
-  header.navbar-fechada ~ #fora-header {
+  header.navbar-ativa .link-pages{
+    display: flex !important;
+    transform: translateY(0%);
     transition: .4s;
-    top: 10px;
-  }
-
-  header nav ul li a::before {
-    display: none;
   }
 }
