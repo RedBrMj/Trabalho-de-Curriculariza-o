@@ -12,7 +12,6 @@ main {
   position: fixed;
   height: 100vh;
   z-index: 1;
-  /* background-color: red; */
 }
 
 #body {
@@ -32,5 +31,6 @@ main {
   .navbar{
     height: 100%;
     position: relative;
+    z-index: 10000000000000;
   }
 }

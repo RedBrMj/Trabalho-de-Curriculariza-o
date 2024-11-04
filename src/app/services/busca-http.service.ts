@@ -11,14 +11,6 @@ export class BuscaHttpService {
   private URL_API_SERVIDOR = 'http://localhost:3001/api/usuarios';
   constructor(private http: HttpClient) {}
 
-  public buscaDeMomentosHistoricos(): Observable<Marcos_Historicos[]> {
-    return this.http.get<Marcos_Historicos[]>(`${this.URL_DADOS_SERVIDOR}/marcos-historicos`);
-  }
-
-  public buscarGanhadoresDoPremioZumbi(): Observable<Premiacoes[]> {
-    return this.http.get<Premiacoes[]>(`${this.URL_DADOS_SERVIDOR}/pessoas_premiadas`);
-  }
-
   public buscarEventos(): Observable<Eventos[]>{
     return this.http.get<Eventos[]>(`${this.URL_DADOS_SERVIDOR}/eventos`);
   }

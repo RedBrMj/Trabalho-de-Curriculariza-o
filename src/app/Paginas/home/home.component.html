@@ -17,7 +17,7 @@
     >
       <div class="imgae-slider"></div>
       <h4 class="titulo-slide">{{ item.titulo }}</h4>
-      <span id="icon-slider" class="pi pi-bookmark"><p></p></span>
+      <span id="icon-slider" class="pi pi-book"><p></p></span>
       <div class="descricao-slide">
         <span class="sub-titulo">{{ item.titulo }}</span>
         <p>
@@ -26,6 +26,7 @@
       </div>
     </div>
   </section>
+  <hr>
   <section class="formulario">
     <div class="banner-form"></div>
     <form [formGroup]="cadastro" (ngSubmit)="enviarCadastro()">

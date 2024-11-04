@@ -54,22 +54,44 @@ export class HomeComponent {
     this.slideAtivo = sliderClicado;
   }
 
-  listaDeSlides: Slider[] = [];
+  fecharSlider(){
+    this.slideAtivo = '';
+  }
+
+  listaDeSlides: Slider[] = [
+    {
+      titulo: "Tipificação do racismo como crime",
+      descricao: "A Lei 14.532/2023, publicada em janeiro deste ano, equipara a injúria racial ao crime de racismo. Com isso, a pena tornou-se mais severa com reclusão de dois a cinco anos, além de multa, não cabe mais fiança e o crime é imprescritível.",
+      imgSource: "injuriaracial",
+    },
+    {
+      titulo: "Lei de Cotas",
+      descricao: "Esta lei garante o acesso à vagas nas universidades públicas para a população negra.",
+      imgSource: "leidecostas",
+    },
+    {
+      titulo: "Lei Áurea",
+    descricao: "A Lei Áurea, também conhecida como Lei n.º 3.353, foi sancionada pela Princesa Isabel em 13 de maio de 1888 e determinou a abolição da escravidão no Brasil. A lei foi resultado de um projeto que tramitou rapidamente no Congresso, após seis dias de debate.",
+      imgSource: "leiaurea",
+    },
+    {
+      titulo: "Revolta da Chibata",
+      descricao: "A Revolta da Chibata foi um motim organizado pelos soldados da Marinha brasileira de 22 a 27 de novembro de 1910. A revolta organizada pelos marinheiros ocorreu em embarcações da Marinha que estavam atracadas na Baía de Guanabara e foi motivada, principalmente, pela insatisfação dos marinheiros com os castigos físicos.",
+      imgSource: "revoltadachibata",
+    },
+    {
+      titulo: "Lei do Ventre Livre",
+      descricao: "A Lei do Ventre Livre foi uma lei abolicionista promulgada no Brasil em 1871 que determinou que os filhos de escravas nascidas a partir de sua data de aprovação seriam libertos",
+      imgSource: "ventrelivre",
+    }
+  ];
 
   constructor(
     private http: BuscaHttpService,
     private fb: FormBuilder,
     private toast: MessageService
   ) {
-    this.buscarListaDeSliders();
     this.abrirSlideAleatorio();
-  }
-
-  public buscarListaDeSliders(): void {
-    this.http.buscarSliders().subscribe({
-      next: (listaDeSlides) => (this.listaDeSlides = listaDeSlides),
-      error: (err) => console.error(err),
-    });
   }
 
   public abrirSlideAleatorio(): void {
@@ -78,23 +100,6 @@ export class HomeComponent {
       this.abrirSlider(this.listaDeSlides[i]?.titulo);
     }
   }
-
-  images: any[] | undefined = [];
-
-  responsiveOptions: any[] = [
-    {
-      breakpoint: '1024px',
-      numVisible: 5,
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 3,
-    },
-    {
-      breakpoint: '560px',
-      numVisible: 1,
-    },
-  ];
 
   ngOnInit(): void {
     this.cadastro = this.fb.group({

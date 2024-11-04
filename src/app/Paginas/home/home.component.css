@@ -16,7 +16,6 @@ main .slider {
   grid-gap: 1em;
   padding: 2em 1em;
   flex-wrap: wrap;
-  position: relative;
 }
 
 main .slider .item-slide::before {
@@ -47,14 +46,6 @@ main .slider .item-slide::after {
   content: "";
   bottom: 0;
   left: 0;
-}
-main .slider::before {
-  position: absolute;
-  content: "";
-  width: 30%;
-  height: 5px;
-  background-color: #333;
-  bottom: -1em;
 }
 
 main .slider .item-slide {
@@ -103,10 +94,8 @@ main .slider .item-slide.ativo {
   flex: 3;
   transform: scale(1.05);
   max-width: 550px;
-  border-radius: 0;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  border: none;
 }
 
 main .slider .item-slide.ativo::after,
@@ -189,6 +178,7 @@ main .formulario form .input-element {
   justify-content: center;
   flex-direction: column;
 }
+
 main .formulario form .btn-form {
   display: flex;
   align-items: center;
@@ -255,4 +245,15 @@ main .formulario form .btn-form button:hover {
     width: 50%;
     padding: 0;
   }
+  main .banner-form{
+    min-width: 150px;
+    max-width: 360px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 750px){
+  main .formulario form {
+    min-width: 150px;   
+  } 
 }

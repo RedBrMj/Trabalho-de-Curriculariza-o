@@ -13,7 +13,7 @@ main .descricao-premio-zumbi {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(../../../assets/Premiados/diploma.jpg) center center no-repeat;
+  background: url(../../../assets/Premiados/zumbi_dos_pamares.jpg) center center no-repeat;
   background-size: cover;
   min-height: 100vh;
   position: relative;

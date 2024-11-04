@@ -8,7 +8,6 @@ export interface Eventos {
 export interface Premiacoes {
   nome: string;
   data: string;
-  local: string;
   detalhes: string;
   descricao: string;
   imagem?: string;

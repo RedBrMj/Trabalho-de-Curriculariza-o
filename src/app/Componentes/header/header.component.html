@@ -27,9 +27,11 @@
   </nav>
 </header>
 <i class="pi pi-bars" id="fora-header" (click)="alterarNavbar()"></i> -->
-<header [ngClass]="{ 'navbar-ativa': navbarAberta, 'navbar-fechada': !navbarAberta }">
+<header [ngClass]="{ 'navbar-ativa': navbarAberta }">
   <div class="header-sidebar">
-    <div class="logofoto"></div>
+    <a routerLink="/">
+      <div class="logofoto"></div>
+    </a>
     <h4 class="logotipo">Zimbaue</h4>
   </div>
   <div class="link-pages">

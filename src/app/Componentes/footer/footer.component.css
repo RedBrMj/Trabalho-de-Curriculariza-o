@@ -26,7 +26,8 @@ footer .redes span {
   width: 50px;
   height: 50px;
   position: relative;
-  border: 2px solid #fff;
+  /* border-radius: 50%; */
+  background-color: #fff;
   cursor: pointer;
   font-size: 0.8em;
   display: flex;
@@ -46,16 +47,29 @@ footer .redes span::before {
   transition: 0.3s;
 }
 
-footer .redes span#facebock::before {
+footer .redes span#facebook i {
+  color: #3b5998;
+}
+
+footer .redes span#instagram i {
+  color: #dd2a7b;
+}
+
+footer .redes span#facebook::before {
   background: linear-gradient(90deg, #3b5998 0%, #4a69ad 100%);
 }
 
 footer .redes span#instagram::before {
-    background: linear-gradient(45deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
+  background: linear-gradient(45deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
 }
 
 footer .redes span:hover::before {
   transform: translateY(0);
+}
+
+footer .redes span#facebook:hover i,
+footer .redes span#instagram:hover i {
+  color: #fff;
 }
 
 footer .redes span i {
@@ -65,11 +79,6 @@ footer .redes span i {
   justify-content: center;
   text-align: center;
   z-index: 1000;
-}
-
-footer .redes span#facebock i,
-footer .redes span#instagram i {
-  color: #fff;
 }
 
 footer .copryght {
@@ -82,4 +91,3 @@ footer .copryght {
   font-size: 14px;
   font-weight: 600;
 }
-
